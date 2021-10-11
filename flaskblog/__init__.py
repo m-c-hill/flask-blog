@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 
 # Flask application configuration
 app = Flask(__name__)
@@ -10,6 +11,9 @@ db = SQLAlchemy(app)  # SQLAlchemy database instance created
 
 # Password encryption
 bcrypt = Bcrypt()
+
+# Login manager
+login_manager = LoginManager(app)
 
 # Needs to be imported after app variable is initialised to avoid circular import as routes uses app object
 from flaskblog import routes
