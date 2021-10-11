@@ -14,6 +14,9 @@ bcrypt = Bcrypt()
 
 # Login manager
 login_manager = LoginManager(app)
+login_manager.login_view = 'login'
+login_manager.login_message_category = 'info'
+# function name of the route we want to send the user to if they try to access a loi
 
 # Needs to be imported after app variable is initialised to avoid circular import as routes uses app object
 from flaskblog import routes
